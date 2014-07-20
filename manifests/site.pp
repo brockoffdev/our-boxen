@@ -90,7 +90,7 @@ node default {
   #Refinery29 Development Specific Apps
   include virtualbox
   include vagrant
-  include iterm2
+  include iterm2::stable
   include sublime_text
   sublime_text::package { 'Emmet':
     source => 'sergeche/emmet-sublime',
