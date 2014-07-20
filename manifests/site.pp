@@ -34,6 +34,12 @@ Package {
   require  => Class['homebrew']
 }
 
+# watch this package manager
+Packagenpm {                        
+  provider => 'npm',
+  require  => Class['nodejs']
+}
+
 Repository {
   provider => git,
   extra    => [
@@ -64,25 +70,60 @@ node default {
   }
 
   # node versions
-  include nodejs::v0_6
-  include nodejs::v0_8
   include nodejs::v0_10
 
   # default ruby versions
-  ruby::version { '1.9.3': }
-  ruby::version { '2.0.0': }
-  ruby::version { '2.1.0': }
-  ruby::version { '2.1.1': }
-  ruby::version { '2.1.2': }
 
   # common, useful packages
   package {
     [
       'ack',
       'findutils',
-      'gnu-tar'
+      'gnu-tar',
+      'nvm',
+      'git-flow',
+      'httpie',
+
     ]:
   }
+
+  #Refinery29 Development Specific Apps
+  include virtualbox
+  include vagrant
+  include iterm2
+  include sublime_text
+  sublime_text::package { 'Emmet':
+    source => 'sergeche/emmet-sublime',
+  }
+  sublime_text::package { 'Alignment':
+    source => 'wbond/sublime_alignment',
+  }
+  sublime_text::package { 'Dayle Rees Color Schemes':
+    source => 'daylerees/colour-schemes',
+  }
+  sublime_text::package { 'Bracket Highligher':
+    source => 'facelessuser/BracketHighlighter',
+  }
+
+  include dash
+  include macvim
+  include hipchat
+  include github_for_mac
+  include sequel_pro
+  include skype
+  include chrome
+  include dropbox
+  include diffmerge
+  include phpstorm
+  include coda2
+  include firefox
+  include shiftit
+  include better_touch_tools
+  include gitflow
+  include lastpass
+  include skitch
+  include mou
+  include wireshark
 
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
