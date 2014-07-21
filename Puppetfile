@@ -82,4 +82,4 @@ github "lastpass",              "1.0.2", :repo => "brockoffdev/puppet-lastpass"
 github "skitch",                "1.0.2"
 github "mou",                   "1.1"
 github "wireshark",             "1.0.0", :repo => "brockoffdev/puppet-wireshark"
-
+github "googledrive",		"1.0.2"

@@ -124,6 +124,7 @@ node default {
   include skitch
   include mou
   include wireshark
+  include googledrive
 
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
