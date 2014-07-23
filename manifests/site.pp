@@ -88,9 +88,9 @@ node default {
   }
 
   #Refinery29 Development Specific Apps
-  include virtualbox
+  #include virtualbox
   include vagrant
-  include iterm2::stable
+  #include iterm2::stable
   include sublime_text
   sublime_text::package { 'Emmet':
     source => 'sergeche/emmet-sublime',
@@ -105,26 +105,26 @@ node default {
     source => 'facelessuser/BracketHighlighter',
   }
 
-  include dash
-  include macvim
-  include hipchat
-  include github_for_mac
-  include sequel_pro
-  include skype
-  include chrome
-  include dropbox
-  include diffmerge
-  include phpstorm
-  include coda2
-  include firefox
-  include shiftit
-  include better_touch_tools
+  #include dash
+  #include macvim
+  #include hipchat
+  #include github_for_mac
+  #include sequel_pro
+  #include skype
+  #include chrome
+  #include dropbox
+  #include diffmerge
+  #include phpstorm
+  #include coda2
+  #include firefox
+  #include shiftit
+  #include better_touch_tools
   include gitflow
-  include lastpass
-  include skitch
-  include mou
+  #include lastpass
+  #include skitch
+  #include mou
   include wireshark
-  include googledrive
+  #include googledrive
 
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
